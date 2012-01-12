@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
+		984A753814BF57FD003938D8 /* ModerMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.m */; };
+		984A754414BF5CE4003938D8 /* TouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.m */; };
+		98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9314BE75D400B7A779 /* UIKit.framework */; };
+		98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9514BE75D400B7A779 /* Foundation.framework */; };
+		98C7ED9814BE75D400B7A779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */; };
+		98C7ED9E14BE75D400B7A779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98C7ED9C14BE75D400B7A779 /* InfoPlist.strings */; };
+		98C7EDA014BE75D400B7A779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7ED9F14BE75D400B7A779 /* main.m */; };
+		98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7EDA314BE75D400B7A779 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		984A753214BF56FC003938D8 /* ModerMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainViewController.h; sourceTree = "<group>"; };
+		984A753314BF56FC003938D8 /* ModerMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainViewController.m; sourceTree = "<group>"; };
+		984A753614BF57FD003938D8 /* ModerMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainView.h; sourceTree = "<group>"; };
+		984A753714BF57FD003938D8 /* ModerMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainView.m; sourceTree = "<group>"; };
+		984A754214BF5CE4003938D8 /* TouchableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableView.h; sourceTree = "<group>"; };
+		984A754314BF5CE4003938D8 /* TouchableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableView.m; sourceTree = "<group>"; };
+		98C7ED8F14BE75D400B7A779 /* Moder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C7ED9314BE75D400B7A779 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		98C7ED9514BE75D400B7A779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		98C7ED9B14BE75D400B7A779 /* Moder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moder-Info.plist"; sourceTree = "<group>"; };
+		98C7ED9D14BE75D400B7A779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		98C7ED9F14BE75D400B7A779 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98C7EDA114BE75D400B7A779 /* Moder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moder-Prefix.pch"; sourceTree = "<group>"; };
+		98C7EDA214BE75D400B7A779 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		98C7EDA314BE75D400B7A779 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98C7ED8C14BE75D400B7A779 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */,
+				98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */,
+				98C7ED9814BE75D400B7A779 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		984A753014BF56C1003938D8 /* ModerMainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				984A753514BF57D3003938D8 /* ModerMainView */,
+				984A753214BF56FC003938D8 /* ModerMainViewController.h */,
+				984A753314BF56FC003938D8 /* ModerMainViewController.m */,
+			);
+			name = ModerMainViewController;
+			sourceTree = "<group>";
+		};
+		984A753514BF57D3003938D8 /* ModerMainView */ = {
+			isa = PBXGroup;
+			children = (
+				984A753614BF57FD003938D8 /* ModerMainView.h */,
+				984A753714BF57FD003938D8 /* ModerMainView.m */,
+			);
+			name = ModerMainView;
+			sourceTree = "<group>";
+		};
+		984A754114BF5CC0003938D8 /* UIGroup */ = {
+			isa = PBXGroup;
+			children = (
+				984A754214BF5CE4003938D8 /* TouchableView.h */,
+				984A754314BF5CE4003938D8 /* TouchableView.m */,
+			);
+			name = UIGroup;
+			sourceTree = "<group>";
+		};
+		98C7ED8414BE75D400B7A779 = {
+			isa = PBXGroup;
+			children = (
+				98C7ED9914BE75D400B7A779 /* Moder */,
+				98C7ED9214BE75D400B7A779 /* Frameworks */,
+				98C7ED9014BE75D400B7A779 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98C7ED9014BE75D400B7A779 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98C7ED8F14BE75D400B7A779 /* Moder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98C7ED9214BE75D400B7A779 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98C7ED9314BE75D400B7A779 /* UIKit.framework */,
+				98C7ED9514BE75D400B7A779 /* Foundation.framework */,
+				98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98C7ED9914BE75D400B7A779 /* Moder */ = {
+			isa = PBXGroup;
+			children = (
+				984A754114BF5CC0003938D8 /* UIGroup */,
+				984A753014BF56C1003938D8 /* ModerMainViewController */,
+				98C7EDA214BE75D400B7A779 /* AppDelegate.h */,
+				98C7EDA314BE75D400B7A779 /* AppDelegate.m */,
+				98C7ED9A14BE75D400B7A779 /* Supporting Files */,
+			);
+			path = Moder;
+			sourceTree = "<group>";
+		};
+		98C7ED9A14BE75D400B7A779 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				98C7ED9B14BE75D400B7A779 /* Moder-Info.plist */,
+				98C7ED9C14BE75D400B7A779 /* InfoPlist.strings */,
+				98C7ED9F14BE75D400B7A779 /* main.m */,
+				98C7EDA114BE75D400B7A779 /* Moder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98C7ED8E14BE75D400B7A779 /* Moder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98C7EDA714BE75D400B7A779 /* Build configuration list for PBXNativeTarget "Moder" */;
+			buildPhases = (
+				98C7ED8B14BE75D400B7A779 /* Sources */,
+				98C7ED8C14BE75D400B7A779 /* Frameworks */,
+				98C7ED8D14BE75D400B7A779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moder;
+			productName = Moder;
+			productReference = 98C7ED8F14BE75D400B7A779 /* Moder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98C7ED8614BE75D400B7A779 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 98C7ED8914BE75D400B7A779 /* Build configuration list for PBXProject "Moder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 98C7ED8414BE75D400B7A779;
+			productRefGroup = 98C7ED9014BE75D400B7A779 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98C7ED8E14BE75D400B7A779 /* Moder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98C7ED8D14BE75D400B7A779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98C7ED9E14BE75D400B7A779 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98C7ED8B14BE75D400B7A779 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98C7EDA014BE75D400B7A779 /* main.m in Sources */,
+				98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */,
+				984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */,
+				984A753814BF57FD003938D8 /* ModerMainView.m in Sources */,
+				984A754414BF5CE4003938D8 /* TouchableView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		98C7ED9C14BE75D400B7A779 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98C7ED9D14BE75D400B7A779 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98C7EDA514BE75D400B7A779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98C7EDA614BE75D400B7A779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98C7EDA814BE75D400B7A779 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Moder/Moder-Prefix.pch";
+				INFOPLIST_FILE = "Moder/Moder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		98C7EDA914BE75D400B7A779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Moder/Moder-Prefix.pch";
+				INFOPLIST_FILE = "Moder/Moder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98C7ED8914BE75D400B7A779 /* Build configuration list for PBXProject "Moder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98C7EDA514BE75D400B7A779 /* Debug */,
+				98C7EDA614BE75D400B7A779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98C7EDA714BE75D400B7A779 /* Build configuration list for PBXNativeTarget "Moder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98C7EDA814BE75D400B7A779 /* Debug */,
+				98C7EDA914BE75D400B7A779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98C7ED8614BE75D400B7A779 /* Project object */;
+}
