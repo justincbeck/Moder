@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
 		984A753814BF57FD003938D8 /* ModerMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.m */; };
-		984A754414BF5CE4003938D8 /* TouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.m */; };
+		984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.mm */; };
 		98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9314BE75D400B7A779 /* UIKit.framework */; };
 		98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9514BE75D400B7A779 /* Foundation.framework */; };
 		98C7ED9814BE75D400B7A779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */; };
 		98C7ED9E14BE75D400B7A779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98C7ED9C14BE75D400B7A779 /* InfoPlist.strings */; };
 		98C7EDA014BE75D400B7A779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7ED9F14BE75D400B7A779 /* main.m */; };
 		98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7EDA314BE75D400B7A779 /* AppDelegate.m */; };
+		98EB51EE14BFCD1200F7A1A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */; };
+		98EB51F014BFCFB200F7A1A6 /* Morse.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 98EB51EF14BFCFB200F7A1A6 /* Morse.aiff */; };
+		98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98EB51F514BFD62800F7A1A6 /* Toner.mm */; };
+		98EB51F814BFE4F900F7A1A6 /* Toner.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 98EB51F714BFE4F900F7A1A6 /* Toner.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,7 @@
 		984A753614BF57FD003938D8 /* ModerMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainView.h; sourceTree = "<group>"; };
 		984A753714BF57FD003938D8 /* ModerMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainView.m; sourceTree = "<group>"; };
 		984A754214BF5CE4003938D8 /* TouchableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableView.h; sourceTree = "<group>"; };
-		984A754314BF5CE4003938D8 /* TouchableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableView.m; sourceTree = "<group>"; };
+		984A754314BF5CE4003938D8 /* TouchableView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchableView.mm; sourceTree = "<group>"; };
 		98C7ED8F14BE75D400B7A779 /* Moder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7ED9314BE75D400B7A779 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		98C7ED9514BE75D400B7A779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,6 +39,11 @@
 		98C7EDA114BE75D400B7A779 /* Moder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moder-Prefix.pch"; sourceTree = "<group>"; };
 		98C7EDA214BE75D400B7A779 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		98C7EDA314BE75D400B7A779 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		98EB51EA14BFC56700F7A1A6 /* ModerLetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerLetters.h; sourceTree = "<group>"; };
+		98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		98EB51EF14BFCFB200F7A1A6 /* Morse.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Morse.aiff; sourceTree = "<group>"; };
+		98EB51F514BFD62800F7A1A6 /* Toner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Toner.mm; sourceTree = "<group>"; };
+		98EB51F714BFE4F900F7A1A6 /* Toner.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Toner.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98EB51EE14BFCD1200F7A1A6 /* AudioToolbox.framework in Frameworks */,
 				98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */,
 				98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */,
 				98C7ED9814BE75D400B7A779 /* CoreGraphics.framework in Frameworks */,
@@ -70,13 +80,13 @@
 			name = ModerMainView;
 			sourceTree = "<group>";
 		};
-		984A754114BF5CC0003938D8 /* UIGroup */ = {
+		984A754114BF5CC0003938D8 /* TouchableView */ = {
 			isa = PBXGroup;
 			children = (
 				984A754214BF5CE4003938D8 /* TouchableView.h */,
-				984A754314BF5CE4003938D8 /* TouchableView.m */,
+				984A754314BF5CE4003938D8 /* TouchableView.mm */,
 			);
-			name = UIGroup;
+			name = TouchableView;
 			sourceTree = "<group>";
 		};
 		98C7ED8414BE75D400B7A779 = {
@@ -99,6 +109,7 @@
 		98C7ED9214BE75D400B7A779 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */,
 				98C7ED9314BE75D400B7A779 /* UIKit.framework */,
 				98C7ED9514BE75D400B7A779 /* Foundation.framework */,
 				98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */,
@@ -109,11 +120,13 @@
 		98C7ED9914BE75D400B7A779 /* Moder */ = {
 			isa = PBXGroup;
 			children = (
-				984A754114BF5CC0003938D8 /* UIGroup */,
+				98EB51F314BFD60700F7A1A6 /* Audio */,
+				98EB51EB14BFC84700F7A1A6 /* Resources */,
+				98EB51E814BFC14A00F7A1A6 /* Helpers */,
+				984A754114BF5CC0003938D8 /* TouchableView */,
 				984A753014BF56C1003938D8 /* ModerMainViewController */,
 				98C7EDA214BE75D400B7A779 /* AppDelegate.h */,
 				98C7EDA314BE75D400B7A779 /* AppDelegate.m */,
-				98C7ED9A14BE75D400B7A779 /* Supporting Files */,
 			);
 			path = Moder;
 			sourceTree = "<group>";
@@ -127,6 +140,48 @@
 				98C7EDA114BE75D400B7A779 /* Moder-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98EB51E814BFC14A00F7A1A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				98EB51EA14BFC56700F7A1A6 /* ModerLetters.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		98EB51EB14BFC84700F7A1A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98EB51F114BFCFC700F7A1A6 /* Assets */,
+				98C7ED9A14BE75D400B7A779 /* Supporting Files */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		98EB51F114BFCFC700F7A1A6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				98EB51F214BFCFD200F7A1A6 /* Sounds */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		98EB51F214BFCFD200F7A1A6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				98EB51EF14BFCFB200F7A1A6 /* Morse.aiff */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		98EB51F314BFD60700F7A1A6 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				98EB51F514BFD62800F7A1A6 /* Toner.mm */,
+				98EB51F714BFE4F900F7A1A6 /* Toner.hpp */,
+			);
+			name = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C7ED9E14BE75D400B7A779 /* InfoPlist.strings in Resources */,
+				98EB51F014BFCFB200F7A1A6 /* Morse.aiff in Resources */,
+				98EB51F814BFE4F900F7A1A6 /* Toner.hpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +251,8 @@
 				98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */,
 				984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */,
 				984A753814BF57FD003938D8 /* ModerMainView.m in Sources */,
-				984A754414BF5CE4003938D8 /* TouchableView.m in Sources */,
+				984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */,
+				98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
