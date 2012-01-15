@@ -11,11 +11,14 @@
 @interface Coder : NSObject
 {
     NSMutableArray *_data;
+    int unitLengthInMillis;
 }
 
 - (void) addSignalWithSignalLength:(double) signalLength;
 - (void) addPauseWithPauseLength:(double) pauseLength;
 
 - (void) analyzeData;
+- (int) timeInMillis:(double)time;
+- (void) recalculateUnitLength;
 
 @end

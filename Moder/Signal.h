@@ -11,13 +11,14 @@
 @interface Signal : NSObject
 {
     BOOL _tone;
-    double _length;
+    int _length;
 }
 
 @property (nonatomic, readwrite) BOOL tone;
-@property (nonatomic, readwrite) double length;
+@property (nonatomic, readwrite) int length;
 
-- (id)initWithSignalLength:(double)millis;
-- (id)initWithPauseLength:(double)millis;
+- (id)initWithSignalLength:(int)millis;
+- (id)initWithPauseLength:(int)millis;
+- (NSString *)toString;
 
 @end

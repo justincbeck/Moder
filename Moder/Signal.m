@@ -13,7 +13,7 @@
 @synthesize tone = _tone;
 @synthesize length = _length;
 
-- (id)initWithSignalLength:(double)millis
+- (id)initWithSignalLength:(int)millis
 {
     if (self = [super init])
     {
@@ -24,7 +24,7 @@
     return self;
 }
 
-- (id)initWithPauseLength:(double)millis
+- (id)initWithPauseLength:(int)millis
 {
     if (self = [super init])
     {
@@ -33,6 +33,12 @@
     }
     
     return self;
+}
+
+- (NSString *)toString
+{
+    NSString *toneString = _tone ? @"YES" : @"NO";
+    return [NSString stringWithFormat:@"Tone: %@, Length: %i", toneString, _length];
 }
 
 @end

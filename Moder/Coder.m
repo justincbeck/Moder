@@ -23,26 +23,53 @@
 
 - (void) addSignalWithSignalLength:(double) signalLength
 {
-    Signal *signal = [[Signal alloc] initWithSignalLength:signalLength];
+    Signal *signal = [[Signal alloc] initWithSignalLength:[self timeInMillis:signalLength]];
     [_data addObject:signal];
     
+    [self recalculateUnitLength];
     [self analyzeData];
 }
 
 - (void) addPauseWithPauseLength:(double) pauseLength
 {
-    Signal *signal = [[Signal alloc] initWithPauseLength:pauseLength];
+    Signal *signal = [[Signal alloc] initWithPauseLength:[self timeInMillis:pauseLength]];
     [_data addObject:signal];
 
     [self analyzeData];
 }
 
+- (int) timeInMillis:(double) time
+{
+    int millis = time * 1000;
+    return millis;
+}
+
+- (void) recalculateUnitLength
+{
+    int sum = 0;
+    Signal *lastSignal;
+    
+    for (Signal *signal in _data)
+    {
+        int minLength = lastSignal.length / 2;
+        int maxLength = lastSignal.length * 1.5f;
+        
+        if (signal.length > minLength && signal.length < maxLength)
+        {
+            sum += signal.length;
+            lastSignal = signal;
+        }
+    }
+    
+    unitLengthInMillis = sum / 10;
+    
+    NSLog(@"Unit Length: %i", unitLengthInMillis);
+}
+
 - (void) analyzeData
 {
     Signal *signal = [_data lastObject];
-    
-    NSLog(@"Tone: %@", signal.tone ? @"YES" : @"NO");
-    NSLog(@"Length: %g", signal.length);
+    NSLog(@"%@", [signal toString]);
 }
 
 @end
