@@ -10,7 +10,6 @@
 		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
 		9845CBE514C36AB3006DEB8B /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE414C36AB3006DEB8B /* Coder.m */; };
 		9845CBE914C36D0B006DEB8B /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE814C36D0B006DEB8B /* Signal.m */; };
-		9845CBF114C375D5006DEB8B /* NSMutableArray+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBF014C375D5006DEB8B /* NSMutableArray+Helpers.m */; };
 		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
 		984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.mm */; };
 		984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.mm */; };
@@ -32,8 +31,6 @@
 		9845CBE414C36AB3006DEB8B /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
 		9845CBE714C36D0B006DEB8B /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 		9845CBE814C36D0B006DEB8B /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signal.m; sourceTree = "<group>"; };
-		9845CBEF14C375D5006DEB8B /* NSMutableArray+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSMutableArray+Helpers.h"; sourceTree = "<group>"; };
-		9845CBF014C375D5006DEB8B /* NSMutableArray+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Helpers.m"; sourceTree = "<group>"; };
 		984A753214BF56FC003938D8 /* ModerMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainViewController.h; sourceTree = "<group>"; };
 		984A753314BF56FC003938D8 /* ModerMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainViewController.m; sourceTree = "<group>"; };
 		984A753614BF57FD003938D8 /* ModerMainView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModerMainView.hpp; sourceTree = "<group>"; };
@@ -90,15 +87,6 @@
 				9845CBE814C36D0B006DEB8B /* Signal.m */,
 			);
 			name = Signal;
-			sourceTree = "<group>";
-		};
-		9845CBEA14C37582006DEB8B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				9845CBEF14C375D5006DEB8B /* NSMutableArray+Helpers.h */,
-				9845CBF014C375D5006DEB8B /* NSMutableArray+Helpers.m */,
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		984A753014BF56C1003938D8 /* ModerMainViewController */ = {
@@ -161,7 +149,6 @@
 		98C7ED9914BE75D400B7A779 /* Moder */ = {
 			isa = PBXGroup;
 			children = (
-				9845CBEA14C37582006DEB8B /* Helpers */,
 				9845CBE214C36A99006DEB8B /* Code */,
 				98EB51F314BFD60700F7A1A6 /* Audio */,
 				98EB51EB14BFC84700F7A1A6 /* Resources */,
@@ -298,7 +285,6 @@
 				98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */,
 				9845CBE514C36AB3006DEB8B /* Coder.m in Sources */,
 				9845CBE914C36D0B006DEB8B /* Signal.m in Sources */,
-				9845CBF114C375D5006DEB8B /* NSMutableArray+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
