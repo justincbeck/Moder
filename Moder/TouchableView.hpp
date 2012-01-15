@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Toner.hpp"
+#import "Coder.h"
 
 @interface TouchableView : UIView
 {
     Toner *_toner;
+    Coder *_coder;
     NSMutableArray *touches;
 }
 

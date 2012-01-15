@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
+		9845CBE514C36AB3006DEB8B /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE414C36AB3006DEB8B /* Coder.m */; };
+		9845CBE914C36D0B006DEB8B /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE814C36D0B006DEB8B /* Signal.m */; };
 		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
 		984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.mm */; };
 		984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.mm */; };
@@ -25,9 +27,13 @@
 
 /* Begin PBXFileReference section */
 		9845CBDF14C36316006DEB8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9845CBE314C36AB3006DEB8B /* Coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coder.h; sourceTree = "<group>"; };
+		9845CBE414C36AB3006DEB8B /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
+		9845CBE714C36D0B006DEB8B /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
+		9845CBE814C36D0B006DEB8B /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signal.m; sourceTree = "<group>"; };
 		984A753214BF56FC003938D8 /* ModerMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainViewController.h; sourceTree = "<group>"; };
 		984A753314BF56FC003938D8 /* ModerMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainViewController.m; sourceTree = "<group>"; };
-		984A753614BF57FD003938D8 /* ModerMainView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; path = ModerMainView.hpp; sourceTree = "<group>"; };
+		984A753614BF57FD003938D8 /* ModerMainView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModerMainView.hpp; sourceTree = "<group>"; };
 		984A753714BF57FD003938D8 /* ModerMainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModerMainView.mm; sourceTree = "<group>"; };
 		984A754214BF5CE4003938D8 /* TouchableView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TouchableView.hpp; sourceTree = "<group>"; };
 		984A754314BF5CE4003938D8 /* TouchableView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchableView.mm; sourceTree = "<group>"; };
@@ -64,6 +70,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9845CBE214C36A99006DEB8B /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				9845CBE614C36CE8006DEB8B /* Signal */,
+				9845CBE314C36AB3006DEB8B /* Coder.h */,
+				9845CBE414C36AB3006DEB8B /* Coder.m */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		9845CBE614C36CE8006DEB8B /* Signal */ = {
+			isa = PBXGroup;
+			children = (
+				9845CBE714C36D0B006DEB8B /* Signal.h */,
+				9845CBE814C36D0B006DEB8B /* Signal.m */,
+			);
+			name = Signal;
+			sourceTree = "<group>";
+		};
 		984A753014BF56C1003938D8 /* ModerMainViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +149,7 @@
 		98C7ED9914BE75D400B7A779 /* Moder */ = {
 			isa = PBXGroup;
 			children = (
+				9845CBE214C36A99006DEB8B /* Code */,
 				98EB51F314BFD60700F7A1A6 /* Audio */,
 				98EB51EB14BFC84700F7A1A6 /* Resources */,
 				98EB51E814BFC14A00F7A1A6 /* Helpers */,
@@ -257,6 +283,8 @@
 				984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */,
 				984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */,
 				98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */,
+				9845CBE514C36AB3006DEB8B /* Coder.m in Sources */,
+				9845CBE914C36D0B006DEB8B /* Signal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
