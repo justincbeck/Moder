@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Beckproduct. All rights reserved.
 //
 
-#import "ModerMainView.h"
+#import "ModerMainView.hpp"
 #import "TouchableView.hpp"
 
 @implementation ModerMainView
@@ -15,6 +15,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+
         UITextField *currentLetter = [[UITextField alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 380.0f)];
         currentLetter.backgroundColor = [UIColor redColor];
         [self addSubview:currentLetter];
@@ -26,6 +27,7 @@
         TouchableView *touchView = [[TouchableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 480.0f)];
         touchView.backgroundColor = [UIColor purpleColor];
         touchView.alpha = 0.5f;
+
         [self addSubview:touchView];
     }
     return self;

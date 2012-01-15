@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Toner.hpp"
 
 @interface TouchableView : UIView
+{
+    Toner *_toner;
+    NSMutableArray *touches;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;

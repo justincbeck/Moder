@@ -16,8 +16,6 @@
 #include <vector>
 #include <iostream>
 
-using namespace std;
-
 #define kOutputBus 0
 #define kInputBus 1
 #define SAMPLE_RATE 44100
@@ -34,7 +32,7 @@ AudioComponentInstance audioUnit;
 {
     if (self = [super init])
     {
-        [self generateTone];
+        // Nothing to see here.
     }
     
     return self;
@@ -86,9 +84,6 @@ static OSStatus playbackCallback(void *inRefCon,
                                  UInt32 inNumberFrames, 
                                  AudioBufferList *ioData) 
 {
-    cout<<"index = "<<_index<<endl;
-	cout<<"numBuffers = "<<ioData->mNumberBuffers<<endl;
-
     int totalNumberOfSamples = _pcm.size();
     for (UInt32 i = 0; i < ioData->mNumberBuffers; ++i)
     {

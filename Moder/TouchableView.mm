@@ -8,32 +8,46 @@
 
 #import "TouchableView.hpp"
 #import <AudioToolbox/AudioToolbox.h>
+#import <QuartzCore/QuartzCore.h>
 
-#import "Toner.hpp"
-
-Toner *_toner;
+double touchLength;
+double touchStartTime;
 
 @implementation TouchableView
 
 - (id)initWithFrame:(CGRect)frame
 {
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [indicator setHidesWhenStopped:YES];
+    [indicator startAnimating];
+
     self = [super initWithFrame:frame];
     if (self)
     {
         _toner = [[Toner alloc] init];
+        [_toner generateTone];
     }
+    
+    [indicator stopAnimating];
     return self;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [_toner generateTone];
+    touchStartTime = CACurrentMediaTime();
     [_toner startPlaying];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_toner stopPlaying];
+    
+    double stopTouchTime = CACurrentMediaTime();
+    touchLength = stopTouchTime - touchStartTime;
+    
+    NSLog(@"%g", touchLength);
+    
+    [_toner generateTone];
 }
 
 @end

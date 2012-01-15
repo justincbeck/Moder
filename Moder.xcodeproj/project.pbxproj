@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
 		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
-		984A753814BF57FD003938D8 /* ModerMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.m */; };
+		984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.mm */; };
 		984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.mm */; };
 		98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9314BE75D400B7A779 /* UIKit.framework */; };
 		98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9514BE75D400B7A779 /* Foundation.framework */; };
@@ -23,11 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9845CBDF14C36316006DEB8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		984A753214BF56FC003938D8 /* ModerMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainViewController.h; sourceTree = "<group>"; };
 		984A753314BF56FC003938D8 /* ModerMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainViewController.m; sourceTree = "<group>"; };
-		984A753614BF57FD003938D8 /* ModerMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainView.h; sourceTree = "<group>"; };
-		984A753714BF57FD003938D8 /* ModerMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainView.m; sourceTree = "<group>"; };
-		984A754214BF5CE4003938D8 /* TouchableView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; path = TouchableView.hpp; sourceTree = "<group>"; };
+		984A753614BF57FD003938D8 /* ModerMainView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; path = ModerMainView.hpp; sourceTree = "<group>"; };
+		984A753714BF57FD003938D8 /* ModerMainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModerMainView.mm; sourceTree = "<group>"; };
+		984A754214BF5CE4003938D8 /* TouchableView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TouchableView.hpp; sourceTree = "<group>"; };
 		984A754314BF5CE4003938D8 /* TouchableView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchableView.mm; sourceTree = "<group>"; };
 		98C7ED8F14BE75D400B7A779 /* Moder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7ED9314BE75D400B7A779 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */,
 				98EB51EE14BFCD1200F7A1A6 /* AudioToolbox.framework in Frameworks */,
 				98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */,
 				98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */,
@@ -74,8 +77,8 @@
 		984A753514BF57D3003938D8 /* ModerMainView */ = {
 			isa = PBXGroup;
 			children = (
-				984A753614BF57FD003938D8 /* ModerMainView.h */,
-				984A753714BF57FD003938D8 /* ModerMainView.m */,
+				984A753614BF57FD003938D8 /* ModerMainView.hpp */,
+				984A753714BF57FD003938D8 /* ModerMainView.mm */,
 			);
 			name = ModerMainView;
 			sourceTree = "<group>";
@@ -109,6 +112,7 @@
 		98C7ED9214BE75D400B7A779 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9845CBDF14C36316006DEB8B /* QuartzCore.framework */,
 				98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */,
 				98C7ED9314BE75D400B7A779 /* UIKit.framework */,
 				98C7ED9514BE75D400B7A779 /* Foundation.framework */,
@@ -250,7 +254,7 @@
 				98C7EDA014BE75D400B7A779 /* main.m in Sources */,
 				98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */,
 				984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */,
-				984A753814BF57FD003938D8 /* ModerMainView.m in Sources */,
+				984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */,
 				984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */,
 				98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */,
 			);

@@ -7,7 +7,7 @@
 //
 
 #import "ModerMainViewController.h"
-#import "ModerMainView.h"
+#import "ModerMainView.hpp"
 
 @implementation ModerMainViewController
 
