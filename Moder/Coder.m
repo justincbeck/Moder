@@ -51,8 +51,14 @@
     
     for (Signal *signal in _data)
     {
-        int minLength = lastSignal.length / 2;
-        int maxLength = lastSignal.length * 1.5f;
+        int minLength = 0;
+        int maxLength = 0;
+        
+        if (unitLengthInMillis > 0)
+        {
+            minLength = lastSignal.length / 2;
+            maxLength = lastSignal.length * 1.5f;
+        }
         
         if (signal.length > minLength && signal.length < maxLength)
         {
