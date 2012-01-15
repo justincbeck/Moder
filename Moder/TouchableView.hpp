@@ -1,5 +1,5 @@
 //
-//  TouchableView.h
+//  TouchableView.hpp
 //  Moder
 //
 //  Created by Justin Beck on 1/12/12.

@@ -4,6 +4,12 @@
 //
 //  Created by Marc Vaillant on 11/25/08.
 //  Copyright __MyCompanyName__ 2008. All rights reserved.
+//
+//  Toner.mm
+//  Moder
+//
+//  Renamed and modified by Justin C. Beck on 1/14/12.
+//  Copyright Beckproduct 2012. All rights reserved.
 
 #include "Toner.hpp"
 #include <AudioUnit/AudioUnit.h>
@@ -19,20 +25,27 @@ using namespace std;
 vector<int> _pcm;
 int _index;
 
+OSStatus status;
+AudioComponentInstance audioUnit;
+
 @implementation Toner
 
 -(id)init
 {
     if (self = [super init])
     {
-        // Generate pcm tone: freq = 800, duration = 1s, rise/fall time = 5ms
-        generateTone(_pcm, 800, 1000, SAMPLE_RATE, 5, 0.8);
+        [self generateTone];
     }
     
     return self;
 }
 
-void generateTone(
+- (void) generateTone
+{
+    generate(_pcm, 800, 3000, SAMPLE_RATE, 5, 0.8);
+}
+
+void generate(
                   vector<int> &pcm, 
                   int freq, 
                   double lengthMS, 
@@ -63,6 +76,7 @@ void generateTone(
         pcm[i] += (pcm[i]<<16);
     }
     
+    playSound();
 }
 
 static OSStatus playbackCallback(void *inRefCon, 
@@ -102,12 +116,9 @@ static OSStatus playbackCallback(void *inRefCon,
     return noErr;
 }
 
-- (void)playSound
+void playSound()
 {    
     _index = 0;
-    
-    OSStatus status;
-    AudioComponentInstance audioUnit;
     
     // Describe audio component
     AudioComponentDescription desc;
@@ -166,8 +177,16 @@ static OSStatus playbackCallback(void *inRefCon,
     // Initialize
     status = AudioUnitInitialize(audioUnit);
 
-    // Start playing
+}
+
+- (void) startPlaying
+{
     status = AudioOutputUnitStart(audioUnit);
+}
+
+- (void) stopPlaying
+{
+    status = AudioOutputUnitStop(audioUnit);
 }
 
 @end

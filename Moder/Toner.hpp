@@ -1,10 +1,18 @@
+//
+//  Toner.hpp
+//  Moder
+//
+//  Created by Justin Beck on 1/12/12.
+//  Copyright (c) 2012 Beckproduct. All rights reserved.
+//
+
 #import <vector>
 
 using namespace std;
 
 @interface Toner : NSObject
 
-void generateTone(
+void generate(
                   std::vector<int>& pcm, 
                   int freq, 
                   double lengthMS, 
@@ -12,6 +20,10 @@ void generateTone(
                   double riseTimeMS, 
                   double gain);
 
-- (void)playSound;
+void playSound();
+
+- (void) startPlaying;
+- (void) stopPlaying;
+- (void) generateTone;
 
 @end
