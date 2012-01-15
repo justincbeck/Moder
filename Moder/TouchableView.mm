@@ -11,7 +11,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 double touchLength;
+double notTouchLength;
 double touchStartTime;
+double touchEndTime;
+
 
 @implementation TouchableView
 
@@ -34,20 +37,25 @@ double touchStartTime;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    touchStartTime = CACurrentMediaTime();
     [_toner startPlaying];
+
+    touchStartTime = CACurrentMediaTime();
+    if (touchEndTime > 0.0f)
+    {
+        notTouchLength = touchStartTime - touchEndTime;
+        NSLog(@"Not Touch Length: %g", notTouchLength);
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_toner stopPlaying];
-    
-    double stopTouchTime = CACurrentMediaTime();
-    touchLength = stopTouchTime - touchStartTime;
-    
-    NSLog(@"%g", touchLength);
-    
     [_toner generateTone];
+    
+    touchEndTime = CACurrentMediaTime();
+    touchLength = touchEndTime - touchStartTime;
+    
+    NSLog(@"Touch Length: %g", touchLength);
 }
 
 @end
