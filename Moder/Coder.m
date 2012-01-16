@@ -47,23 +47,29 @@
 - (void) recalculateUnitLength
 {
     int sum = 0;
-    Signal *lastSignal;
+    Signal *lastSignal = nil;
     
     for (Signal *signal in _data)
     {
-        int minLength = 0;
-        int maxLength = 0;
-        
-        if (unitLengthInMillis > 0)
+        if (signal.tone == YES)
         {
-            minLength = lastSignal.length / 2;
-            maxLength = lastSignal.length * 1.5f;
-        }
-        
-        if (signal.length > minLength && signal.length < maxLength)
-        {
-            sum += signal.length;
-            lastSignal = signal;
+            NSLog(@"Signal Length: %i", signal.length);
+            NSLog(@"Last Signal Length: %i", lastSignal.length);
+            
+            int minLength = lastSignal.length / 2;
+            int maxLength = lastSignal.length * 1.5f;
+            
+            NSLog(@"Min Length: %i, Max Length: %i", minLength, maxLength);
+            
+            if (signal.length > minLength && signal.length < maxLength)
+            {
+                NSLog(@"Adding");
+                
+                sum += signal.length;
+                NSLog(@"Sum: %i", sum);
+                
+                lastSignal = signal;
+            }
         }
     }
     
