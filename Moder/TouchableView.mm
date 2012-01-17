@@ -10,11 +10,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <QuartzCore/QuartzCore.h>
 
-double signalLength;
-double notTouchLength;
-double touchStartTime;
-double touchEndTime;
-
 @implementation TouchableView
 
 - (id)initWithFrame:(CGRect)frame
@@ -27,8 +22,8 @@ double touchEndTime;
     if (self)
     {
         _coder = [[Coder alloc] init];
-        
         _toner = [[Toner alloc] init];
+        
         [_toner generateTone];
     }
     
@@ -39,24 +34,14 @@ double touchEndTime;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_toner startPlaying];
-
-    touchStartTime = CACurrentMediaTime();
-    if (touchEndTime > 0.0f)
-    {
-        notTouchLength = touchStartTime - touchEndTime;
-        [_coder addPauseWithPauseLength:notTouchLength];
-    }
+    [_coder addPause];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_toner stopPlaying];
     [_toner generateTone];
-    
-    touchEndTime = CACurrentMediaTime();
-    signalLength = touchEndTime - touchStartTime;
-    
-    [_coder addSignalWithSignalLength:signalLength];
+    [_coder addSignal];
 }
 
 @end

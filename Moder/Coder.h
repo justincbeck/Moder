@@ -15,8 +15,8 @@
     int unitLengthInMillis;
 }
 
-- (void) addSignalWithSignalLength:(double) signalLength;
-- (void) addPauseWithPauseLength:(double) pauseLength;
+- (void) addSignal;
+- (void) addPause;
 
 - (int) timeInMillis:(double)time;
 - (void) recalculateUnitLength;

@@ -9,7 +9,14 @@
 #import "Coder.h"
 #import "Signal.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation Coder
+
+double signalLength;
+double notTouchLength;
+double touchStartTime;
+double touchEndTime;
 
 - (id)init
 {
@@ -22,28 +29,38 @@
     return self;
 }
 
-- (void) addSignalWithSignalLength:(double) signalLength
+- (void) addSignal
 {
+    touchEndTime = CACurrentMediaTime();
+    signalLength = touchEndTime - touchStartTime;
+    
     int signalLengthInMillis = [self timeInMillis:signalLength];
+    
     Signal *signal = [[Signal alloc] initWithSignalLength:signalLengthInMillis];
     [_currentWord addObject:signal];
     
     [self recalculateUnitLength];
 }
 
-- (void) addPauseWithPauseLength:(double) pauseLength
+- (void) addPause
 {
-    int pauseLengthInMillis = [self timeInMillis:pauseLength];
-    if (pauseLengthInMillis > 1000)
+    touchStartTime = CACurrentMediaTime();
+    notTouchLength = touchStartTime - touchEndTime;
+    
+    if (touchEndTime > 0.0f)
     {
-        [_data addObject:_currentWord];
-        _currentWord = nil;
-        _currentWord = [[NSMutableArray alloc] init];
-    }
-    else
-    {
-        Signal *pause = [[Signal alloc] initWithPauseLength:pauseLengthInMillis];
-        [_currentWord addObject:pause];
+        int pauseLengthInMillis = [self timeInMillis:notTouchLength];
+        
+        if (pauseLengthInMillis > 1000)
+        {
+            [_data addObject:_currentWord];
+            [_currentWord removeAllObjects];
+        }
+        else
+        {
+            Signal *pause = [[Signal alloc] initWithPauseLength:pauseLengthInMillis];
+            [_currentWord addObject:pause];
+        }
     }
 }
 
