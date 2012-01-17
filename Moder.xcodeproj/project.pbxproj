@@ -20,7 +20,6 @@
 		98C7EDA014BE75D400B7A779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7ED9F14BE75D400B7A779 /* main.m */; };
 		98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7EDA314BE75D400B7A779 /* AppDelegate.m */; };
 		98EB51EE14BFCD1200F7A1A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */; };
-		98EB51F014BFCFB200F7A1A6 /* Morse.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 98EB51EF14BFCFB200F7A1A6 /* Morse.aiff */; };
 		98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98EB51F514BFD62800F7A1A6 /* Toner.mm */; };
 		98EB51F814BFE4F900F7A1A6 /* Toner.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 98EB51F714BFE4F900F7A1A6 /* Toner.hpp */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		98C7EDA314BE75D400B7A779 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		98EB51EA14BFC56700F7A1A6 /* ModerLetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerLetters.h; sourceTree = "<group>"; };
 		98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		98EB51EF14BFCFB200F7A1A6 /* Morse.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Morse.aiff; sourceTree = "<group>"; };
 		98EB51F514BFD62800F7A1A6 /* Toner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Toner.mm; sourceTree = "<group>"; };
 		98EB51F714BFE4F900F7A1A6 /* Toner.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Toner.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,26 +181,9 @@
 		98EB51EB14BFC84700F7A1A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				98EB51F114BFCFC700F7A1A6 /* Assets */,
 				98C7ED9A14BE75D400B7A779 /* Supporting Files */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		98EB51F114BFCFC700F7A1A6 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				98EB51F214BFCFD200F7A1A6 /* Sounds */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
-		98EB51F214BFCFD200F7A1A6 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				98EB51EF14BFCFB200F7A1A6 /* Morse.aiff */,
-			);
-			name = Sounds;
 			sourceTree = "<group>";
 		};
 		98EB51F314BFD60700F7A1A6 /* Audio */ = {
@@ -265,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C7ED9E14BE75D400B7A779 /* InfoPlist.strings in Resources */,
-				98EB51F014BFCFB200F7A1A6 /* Morse.aiff in Resources */,
 				98EB51F814BFE4F900F7A1A6 /* Toner.hpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

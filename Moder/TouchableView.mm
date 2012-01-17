@@ -19,8 +19,6 @@ double touchEndTime;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    // This is not quite right... - JCB
-    
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [indicator setHidesWhenStopped:YES];
     [indicator startAnimating];

@@ -16,6 +16,7 @@
     if (self = [super init])
     {
         _data = [[NSMutableArray alloc] init];
+        _currentWord = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -23,19 +24,27 @@
 
 - (void) addSignalWithSignalLength:(double) signalLength
 {
-    Signal *signal = [[Signal alloc] initWithSignalLength:[self timeInMillis:signalLength]];
-    [_data addObject:signal];
+    int signalLengthInMillis = [self timeInMillis:signalLength];
+    Signal *signal = [[Signal alloc] initWithSignalLength:signalLengthInMillis];
+    [_currentWord addObject:signal];
     
     [self recalculateUnitLength];
-    [self analyzeData];
 }
 
 - (void) addPauseWithPauseLength:(double) pauseLength
 {
-    Signal *signal = [[Signal alloc] initWithPauseLength:[self timeInMillis:pauseLength]];
-    [_data addObject:signal];
-
-    [self analyzeData];
+    int pauseLengthInMillis = [self timeInMillis:pauseLength];
+    if (pauseLengthInMillis > 1000)
+    {
+        [_data addObject:_currentWord];
+        _currentWord = nil;
+        _currentWord = [[NSMutableArray alloc] init];
+    }
+    else
+    {
+        Signal *pause = [[Signal alloc] initWithPauseLength:pauseLengthInMillis];
+        [_currentWord addObject:pause];
+    }
 }
 
 - (int) timeInMillis:(double) time
@@ -47,41 +56,25 @@
 - (void) recalculateUnitLength
 {
     int sum = 0;
-    Signal *lastSignal = nil;
     
-    for (Signal *signal in _data)
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tone = YES"];
+    NSArray *filteredArray = [_data filteredArrayUsingPredicate:predicate];
+    
+    Signal *lastSignal = [filteredArray lastObject];
+    
+    for (Signal *signal in filteredArray)
     {
-        if (signal.tone == YES)
+        int minLength = lastSignal.length / 2;
+        int maxLength = lastSignal.length * 1.5f;
+        
+        if (signal.length > minLength && signal.length < maxLength)
         {
-            NSLog(@"Signal Length: %i", signal.length);
-            NSLog(@"Last Signal Length: %i", lastSignal.length);
-            
-            int minLength = lastSignal.length / 2;
-            int maxLength = lastSignal.length * 1.5f;
-            
-            NSLog(@"Min Length: %i, Max Length: %i", minLength, maxLength);
-            
-            if (signal.length > minLength && signal.length < maxLength)
-            {
-                NSLog(@"Adding");
-                
-                sum += signal.length;
-                NSLog(@"Sum: %i", sum);
-                
-                lastSignal = signal;
-            }
+            sum += signal.length;
+            lastSignal = signal;
         }
     }
     
     unitLengthInMillis = sum / 10;
-    
-    NSLog(@"Unit Length: %i", unitLengthInMillis);
-}
-
-- (void) analyzeData
-{
-    Signal *signal = [_data lastObject];
-    NSLog(@"%@", [signal toString]);
 }
 
 @end

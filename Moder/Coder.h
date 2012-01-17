@@ -11,13 +11,13 @@
 @interface Coder : NSObject
 {
     NSMutableArray *_data;
+    NSMutableArray *_currentWord;
     int unitLengthInMillis;
 }
 
 - (void) addSignalWithSignalLength:(double) signalLength;
 - (void) addPauseWithPauseLength:(double) pauseLength;
 
-- (void) analyzeData;
 - (int) timeInMillis:(double)time;
 - (void) recalculateUnitLength;
 
