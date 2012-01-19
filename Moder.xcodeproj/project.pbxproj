@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981925A014C62B8F009AAB86 /* NSNumber+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */; };
 		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
 		9845CBE514C36AB3006DEB8B /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE414C36AB3006DEB8B /* Coder.m */; };
 		9845CBE914C36D0B006DEB8B /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE814C36D0B006DEB8B /* Signal.m */; };
 		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
 		984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.mm */; };
 		984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.mm */; };
+		9875AB5D14C86FFE00D71CA2 /* CodeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875AB5C14C86FFE00D71CA2 /* CodeDecoder.m */; };
 		98C7ED9414BE75D400B7A779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9314BE75D400B7A779 /* UIKit.framework */; };
 		98C7ED9614BE75D400B7A779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9514BE75D400B7A779 /* Foundation.framework */; };
 		98C7ED9814BE75D400B7A779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9819259E14C62B8F009AAB86 /* NSNumber+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Helpers.h"; sourceTree = "<group>"; };
+		9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Helpers.m"; sourceTree = "<group>"; };
 		9845CBDF14C36316006DEB8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9845CBE314C36AB3006DEB8B /* Coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coder.h; sourceTree = "<group>"; };
 		9845CBE414C36AB3006DEB8B /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		984A753714BF57FD003938D8 /* ModerMainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModerMainView.mm; sourceTree = "<group>"; };
 		984A754214BF5CE4003938D8 /* TouchableView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TouchableView.hpp; sourceTree = "<group>"; };
 		984A754314BF5CE4003938D8 /* TouchableView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchableView.mm; sourceTree = "<group>"; };
+		9875AB5B14C86FFE00D71CA2 /* CodeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeDecoder.h; sourceTree = "<group>"; };
+		9875AB5C14C86FFE00D71CA2 /* CodeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeDecoder.m; sourceTree = "<group>"; };
 		98C7ED8F14BE75D400B7A779 /* Moder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C7ED9314BE75D400B7A779 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		98C7ED9514BE75D400B7A779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +77,7 @@
 		9845CBE214C36A99006DEB8B /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				9875AB5914C86EB600D71CA2 /* Decoder */,
 				9845CBE614C36CE8006DEB8B /* Signal */,
 				9845CBE314C36AB3006DEB8B /* Coder.h */,
 				9845CBE414C36AB3006DEB8B /* Coder.m */,
@@ -113,6 +120,15 @@
 				984A754314BF5CE4003938D8 /* TouchableView.mm */,
 			);
 			name = TouchableView;
+			sourceTree = "<group>";
+		};
+		9875AB5914C86EB600D71CA2 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				9875AB5B14C86FFE00D71CA2 /* CodeDecoder.h */,
+				9875AB5C14C86FFE00D71CA2 /* CodeDecoder.m */,
+			);
+			name = Decoder;
 			sourceTree = "<group>";
 		};
 		98C7ED8414BE75D400B7A779 = {
@@ -174,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				98EB51EA14BFC56700F7A1A6 /* ModerLetters.h */,
+				9819259E14C62B8F009AAB86 /* NSNumber+Helpers.h */,
+				9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -265,6 +283,8 @@
 				98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */,
 				9845CBE514C36AB3006DEB8B /* Coder.m in Sources */,
 				9845CBE914C36D0B006DEB8B /* Signal.m in Sources */,
+				981925A014C62B8F009AAB86 /* NSNumber+Helpers.m in Sources */,
+				9875AB5D14C86FFE00D71CA2 /* CodeDecoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

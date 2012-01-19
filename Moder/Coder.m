@@ -8,8 +8,16 @@
 
 #import "Coder.h"
 #import "Signal.h"
+#import "CodeDecoder.h"
+#import "NSNumber+Helpers.h"
 
 #import <QuartzCore/QuartzCore.h>
+
+#define kModerDefaultPercentageDeviation 50
+
+#define kModerDefaultUnitLength 200
+#define kModerDefaultLetterSeperator 600
+#define kModerDefaultWordSeperator 1400
 
 @implementation Coder
 
@@ -22,8 +30,9 @@ double touchEndTime;
 {
     if (self = [super init])
     {
-        _data = [[NSMutableArray alloc] init];
+        _currentLetter = [[NSMutableArray alloc] init];
         _currentWord = [[NSMutableArray alloc] init];
+        _text = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -37,9 +46,9 @@ double touchEndTime;
     int signalLengthInMillis = [self timeInMillis:signalLength];
     
     Signal *signal = [[Signal alloc] initWithSignalLength:signalLengthInMillis];
-    [_currentWord addObject:signal];
+    [_currentLetter addObject:signal];
     
-    [self recalculateUnitLength];
+//    [self recalculateUnitLength];
 }
 
 - (void) addPause
@@ -50,18 +59,54 @@ double touchEndTime;
     if (touchEndTime > 0.0f)
     {
         int pauseLengthInMillis = [self timeInMillis:notTouchLength];
-        
-        if (pauseLengthInMillis > 1000)
+//        if (pauseLengthInMillis > kModerDefaultWordSeperator)
+//        {
+//            [_text addObject:_currentWord];
+//            [_currentWord removeAllObjects];
+//        }
+        if (pauseLengthInMillis > kModerDefaultLetterSeperator)
         {
-            [_data addObject:_currentWord];
-            [_currentWord removeAllObjects];
+            [_currentWord addObject:_currentLetter];
+            [self displayLetter:_currentLetter];
+            [_currentLetter removeAllObjects];
         }
         else
         {
             Signal *pause = [[Signal alloc] initWithPauseLength:pauseLengthInMillis];
-            [_currentWord addObject:pause];
+            [_currentLetter addObject:pause];
         }
     }
+}
+
+- (void) displayLetter:(NSArray *)letter
+{
+    CodeDecoder *decoder = [[CodeDecoder alloc] init];
+    
+    NSNumber *unitLength = [NSNumber numberWithInt:kModerDefaultUnitLength];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tone = YES"];
+    NSArray *tones = [_currentLetter filteredArrayUsingPredicate:predicate];
+    
+    NSString *decoded = [NSString string];
+    
+    for (Signal *signal in tones)
+    {
+        NSNumber *signalLength = [NSNumber numberWithInt:signal.length];
+        
+        // TODO: A basic if/else will work for now
+        if ([unitLength isWithinPercentage:[NSNumber numberWithInt:kModerDefaultPercentageDeviation] ofNumber:signalLength])
+        {
+            decoded = [decoded stringByAppendingString:@"."];
+        }
+        else
+        {
+            decoded = [decoded stringByAppendingString:@"-"];
+        }
+    }
+    
+    NSString *decodedLetter = [decoder.map objectForKey:decoded];
+    NSLog(@"%@", decoded);
+    NSLog(@"Letter: %@", decodedLetter);
 }
 
 - (int) timeInMillis:(double) time
@@ -75,7 +120,7 @@ double touchEndTime;
     int sum = 0;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tone = YES"];
-    NSArray *filteredArray = [_data filteredArrayUsingPredicate:predicate];
+    NSArray *filteredArray = [_text filteredArrayUsingPredicate:predicate];
     
     Signal *lastSignal = [filteredArray lastObject];
     

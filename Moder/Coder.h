@@ -10,8 +10,10 @@
 
 @interface Coder : NSObject
 {
-    NSMutableArray *_data;
+    NSMutableArray *_currentLetter;
     NSMutableArray *_currentWord;
+    NSMutableArray *_text;
+    
     int unitLengthInMillis;
 }
 
@@ -20,5 +22,7 @@
 
 - (int) timeInMillis:(double)time;
 - (void) recalculateUnitLength;
+
+- (void) displayLetter:(NSArray *)letter;
 
 @end
