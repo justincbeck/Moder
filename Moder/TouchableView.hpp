@@ -17,6 +17,8 @@
     NSMutableArray *touches;
 }
 
+@property (nonatomic, retain) Coder *coder;
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 

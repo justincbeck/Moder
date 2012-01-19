@@ -8,21 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ModerCoderDelegate <NSObject>
+
+@required
+
+- (void)displayLetter:(NSString *)letter;
+
+@end
+
 @interface Coder : NSObject
 {
     NSMutableArray *_currentLetter;
     NSMutableArray *_currentWord;
     NSMutableArray *_text;
     
+    id <ModerCoderDelegate> _delegate;
+
     int unitLengthInMillis;
 }
+
+@property (nonatomic, retain) id <ModerCoderDelegate> delegate;
 
 - (void) addSignal;
 - (void) addPause;
 
 - (int) timeInMillis:(double)time;
-- (void) recalculateUnitLength;
-
-- (void) displayLetter:(NSArray *)letter;
+- (NSString *)decodeLetter:(NSArray *)letter;
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Beckproduct. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "AppDelegate.hpp"
 
-#import "ModerMainViewController.h"
+#import "ModerMainViewController.hpp"
 
 @implementation AppDelegate
 

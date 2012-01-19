@@ -26,6 +26,8 @@ double notTouchLength;
 double touchStartTime;
 double touchEndTime;
 
+@synthesize delegate = _delegate;
+
 - (id)init
 {
     if (self = [super init])
@@ -47,8 +49,6 @@ double touchEndTime;
     
     Signal *signal = [[Signal alloc] initWithSignalLength:signalLengthInMillis];
     [_currentLetter addObject:signal];
-    
-//    [self recalculateUnitLength];
 }
 
 - (void) addPause
@@ -59,15 +59,11 @@ double touchEndTime;
     if (touchEndTime > 0.0f)
     {
         int pauseLengthInMillis = [self timeInMillis:notTouchLength];
-//        if (pauseLengthInMillis > kModerDefaultWordSeperator)
-//        {
-//            [_text addObject:_currentWord];
-//            [_currentWord removeAllObjects];
-//        }
+
         if (pauseLengthInMillis > kModerDefaultLetterSeperator)
         {
             [_currentWord addObject:_currentLetter];
-            [self displayLetter:_currentLetter];
+            [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
             [_currentLetter removeAllObjects];
         }
         else
@@ -78,11 +74,9 @@ double touchEndTime;
     }
 }
 
-- (void) displayLetter:(NSArray *)letter
+- (NSString *) decodeLetter:(NSArray *)letter
 {
     CodeDecoder *decoder = [[CodeDecoder alloc] init];
-    
-    NSNumber *unitLength = [NSNumber numberWithInt:kModerDefaultUnitLength];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tone = YES"];
     NSArray *tones = [_currentLetter filteredArrayUsingPredicate:predicate];
@@ -93,8 +87,7 @@ double touchEndTime;
     {
         NSNumber *signalLength = [NSNumber numberWithInt:signal.length];
         
-        // TODO: A basic if/else will work for now
-        if ([unitLength isWithinPercentage:[NSNumber numberWithInt:kModerDefaultPercentageDeviation] ofNumber:signalLength])
+        if ([signalLength isWithinPercentage:[NSNumber numberWithInt:kModerDefaultPercentageDeviation] ofNumber:[NSNumber numberWithInt:kModerDefaultUnitLength]])
         {
             decoded = [decoded stringByAppendingString:@"."];
         }
@@ -104,39 +97,15 @@ double touchEndTime;
         }
     }
     
-    NSString *decodedLetter = [decoder.map objectForKey:decoded];
     NSLog(@"%@", decoded);
-    NSLog(@"Letter: %@", decodedLetter);
+    
+    return [decoder.map objectForKey:decoded];
 }
 
 - (int) timeInMillis:(double) time
 {
     int millis = time * 1000;
     return millis;
-}
-
-- (void) recalculateUnitLength
-{
-    int sum = 0;
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tone = YES"];
-    NSArray *filteredArray = [_text filteredArrayUsingPredicate:predicate];
-    
-    Signal *lastSignal = [filteredArray lastObject];
-    
-    for (Signal *signal in filteredArray)
-    {
-        int minLength = lastSignal.length / 2;
-        int maxLength = lastSignal.length * 1.5f;
-        
-        if (signal.length > minLength && signal.length < maxLength)
-        {
-            sum += signal.length;
-            lastSignal = signal;
-        }
-    }
-    
-    unitLengthInMillis = sum / 10;
 }
 
 @end

@@ -11,24 +11,31 @@
 
 @implementation ModerMainView
 
+@synthesize currentLetterLabel = _currentLetterLabel;
+@synthesize currentTextTextView = _currentTextTextView;
+@synthesize touchView = _touchView;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
 
-        UITextField *currentLetter = [[UITextField alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 380.0f)];
-        currentLetter.backgroundColor = [UIColor redColor];
-        [self addSubview:currentLetter];
+        _currentLetterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 380.0f)];
+        _currentLetterLabel.font = [UIFont fontWithName:@"Arial" size:300.0f];
+        _currentLetterLabel.adjustsFontSizeToFitWidth = YES;
+        _currentLetterLabel.textAlignment = UITextAlignmentCenter;
+        _currentLetterLabel.numberOfLines = 0;
+        _currentLetterLabel.lineBreakMode = UILineBreakModeWordWrap;
+        [self addSubview:_currentLetterLabel];
         
-        UITextView *currentText = [[UITextView alloc] initWithFrame:CGRectMake(0.0f, 380.0f, 320.0f, 100.0f)];
-        currentText.backgroundColor = [UIColor blueColor];
-        [self addSubview:currentText];
+        _currentTextTextView = [[UITextView alloc] initWithFrame:CGRectMake(0.0f, 380.0f, 320.0f, 100.0f)];
+        _currentTextTextView.backgroundColor = [UIColor grayColor];
+        [self addSubview:_currentTextTextView];
         
-        TouchableView *touchView = [[TouchableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 480.0f)];
-        touchView.backgroundColor = [UIColor purpleColor];
-        touchView.alpha = 0.5f;
+        _touchView = [[TouchableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 480.0f)];
+        _touchView.alpha = 0.5f;
 
-        [self addSubview:touchView];
+        [self addSubview:_touchView];
     }
     return self;
 }

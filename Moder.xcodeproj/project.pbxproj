@@ -11,7 +11,7 @@
 		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
 		9845CBE514C36AB3006DEB8B /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE414C36AB3006DEB8B /* Coder.m */; };
 		9845CBE914C36D0B006DEB8B /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE814C36D0B006DEB8B /* Signal.m */; };
-		984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.m */; };
+		984A753414BF56FC003938D8 /* ModerMainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A753314BF56FC003938D8 /* ModerMainViewController.mm */; };
 		984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A753714BF57FD003938D8 /* ModerMainView.mm */; };
 		984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 984A754314BF5CE4003938D8 /* TouchableView.mm */; };
 		9875AB5D14C86FFE00D71CA2 /* CodeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875AB5C14C86FFE00D71CA2 /* CodeDecoder.m */; };
@@ -20,7 +20,7 @@
 		98C7ED9814BE75D400B7A779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C7ED9714BE75D400B7A779 /* CoreGraphics.framework */; };
 		98C7ED9E14BE75D400B7A779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98C7ED9C14BE75D400B7A779 /* InfoPlist.strings */; };
 		98C7EDA014BE75D400B7A779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7ED9F14BE75D400B7A779 /* main.m */; };
-		98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C7EDA314BE75D400B7A779 /* AppDelegate.m */; };
+		98C7EDA414BE75D400B7A779 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98C7EDA314BE75D400B7A779 /* AppDelegate.mm */; };
 		98EB51EE14BFCD1200F7A1A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */; };
 		98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98EB51F514BFD62800F7A1A6 /* Toner.mm */; };
 		98EB51F814BFE4F900F7A1A6 /* Toner.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 98EB51F714BFE4F900F7A1A6 /* Toner.hpp */; };
@@ -34,8 +34,8 @@
 		9845CBE414C36AB3006DEB8B /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
 		9845CBE714C36D0B006DEB8B /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 		9845CBE814C36D0B006DEB8B /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signal.m; sourceTree = "<group>"; };
-		984A753214BF56FC003938D8 /* ModerMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerMainViewController.h; sourceTree = "<group>"; };
-		984A753314BF56FC003938D8 /* ModerMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModerMainViewController.m; sourceTree = "<group>"; };
+		984A753214BF56FC003938D8 /* ModerMainViewController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModerMainViewController.hpp; sourceTree = "<group>"; };
+		984A753314BF56FC003938D8 /* ModerMainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModerMainViewController.mm; sourceTree = "<group>"; };
 		984A753614BF57FD003938D8 /* ModerMainView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModerMainView.hpp; sourceTree = "<group>"; };
 		984A753714BF57FD003938D8 /* ModerMainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModerMainView.mm; sourceTree = "<group>"; };
 		984A754214BF5CE4003938D8 /* TouchableView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TouchableView.hpp; sourceTree = "<group>"; };
@@ -50,9 +50,8 @@
 		98C7ED9D14BE75D400B7A779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98C7ED9F14BE75D400B7A779 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98C7EDA114BE75D400B7A779 /* Moder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moder-Prefix.pch"; sourceTree = "<group>"; };
-		98C7EDA214BE75D400B7A779 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		98C7EDA314BE75D400B7A779 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		98EB51EA14BFC56700F7A1A6 /* ModerLetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModerLetters.h; sourceTree = "<group>"; };
+		98C7EDA214BE75D400B7A779 /* AppDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AppDelegate.hpp; sourceTree = "<group>"; };
+		98C7EDA314BE75D400B7A779 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		98EB51ED14BFCD1200F7A1A6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		98EB51F514BFD62800F7A1A6 /* Toner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Toner.mm; sourceTree = "<group>"; };
 		98EB51F714BFE4F900F7A1A6 /* Toner.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Toner.hpp; sourceTree = "<group>"; };
@@ -98,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				984A753514BF57D3003938D8 /* ModerMainView */,
-				984A753214BF56FC003938D8 /* ModerMainViewController.h */,
-				984A753314BF56FC003938D8 /* ModerMainViewController.m */,
+				984A753214BF56FC003938D8 /* ModerMainViewController.hpp */,
+				984A753314BF56FC003938D8 /* ModerMainViewController.mm */,
 			);
 			name = ModerMainViewController;
 			sourceTree = "<group>";
@@ -169,8 +168,8 @@
 				98EB51E814BFC14A00F7A1A6 /* Helpers */,
 				984A754114BF5CC0003938D8 /* TouchableView */,
 				984A753014BF56C1003938D8 /* ModerMainViewController */,
-				98C7EDA214BE75D400B7A779 /* AppDelegate.h */,
-				98C7EDA314BE75D400B7A779 /* AppDelegate.m */,
+				98C7EDA214BE75D400B7A779 /* AppDelegate.hpp */,
+				98C7EDA314BE75D400B7A779 /* AppDelegate.mm */,
 			);
 			path = Moder;
 			sourceTree = "<group>";
@@ -189,7 +188,6 @@
 		98EB51E814BFC14A00F7A1A6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				98EB51EA14BFC56700F7A1A6 /* ModerLetters.h */,
 				9819259E14C62B8F009AAB86 /* NSNumber+Helpers.h */,
 				9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */,
 			);
@@ -276,8 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C7EDA014BE75D400B7A779 /* main.m in Sources */,
-				98C7EDA414BE75D400B7A779 /* AppDelegate.m in Sources */,
-				984A753414BF56FC003938D8 /* ModerMainViewController.m in Sources */,
+				98C7EDA414BE75D400B7A779 /* AppDelegate.mm in Sources */,
+				984A753414BF56FC003938D8 /* ModerMainViewController.mm in Sources */,
 				984A753814BF57FD003938D8 /* ModerMainView.mm in Sources */,
 				984A754414BF5CE4003938D8 /* TouchableView.mm in Sources */,
 				98EB51F614BFD62800F7A1A6 /* Toner.mm in Sources */,

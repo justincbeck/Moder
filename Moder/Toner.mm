@@ -14,7 +14,6 @@
 #include "Toner.hpp"
 #include <AudioUnit/AudioUnit.h>
 #include <vector>
-#include <iostream>
 
 #define kOutputBus 0
 #define kInputBus 1

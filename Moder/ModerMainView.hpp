@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TouchableView.hpp"
 
 @interface ModerMainView : UIView
+{
+    UILabel *_currentLetterLabel;
+    UITextView *_currentTextTextView;
+    TouchableView *_touchView;
+}
+
+@property (nonatomic, retain) UILabel *currentLetterLabel;
+@property (nonatomic, retain) UITextView *currentTextTextView;
+@property (nonatomic, retain) TouchableView *touchView;
 
 @end

@@ -6,16 +6,18 @@
 //  Copyright (c) 2012 Beckproduct. All rights reserved.
 //
 
-#import "ModerMainViewController.h"
+#import "ModerMainViewController.hpp"
 #import "ModerMainView.hpp"
 
 @implementation ModerMainViewController
+
+@synthesize mainView = _mainView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _mainView = [[ModerMainView alloc] init];
     }
     return self;
 }
@@ -25,12 +27,17 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)displayLetter:(NSString *)letter
+{
+    _mainView.currentLetterLabel.text = letter;
+}
+
 #pragma mark - View lifecycle
 
 - (void)loadView
 {
-    ModerMainView *moderMainView = [[ModerMainView alloc] init];
-    [self setView:moderMainView];
+    _mainView.touchView.coder.delegate = self;
+    [self setView:_mainView];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

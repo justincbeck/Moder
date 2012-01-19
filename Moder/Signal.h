@@ -19,6 +19,7 @@
 
 - (id)initWithSignalLength:(int)millis;
 - (id)initWithPauseLength:(int)millis;
+
 - (NSString *)toString;
 
 @end

@@ -12,6 +12,8 @@
 
 @implementation TouchableView
 
+@synthesize coder = _coder;
+
 - (id)initWithFrame:(CGRect)frame
 {
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -23,7 +25,6 @@
     {
         _coder = [[Coder alloc] init];
         _toner = [[Toner alloc] init];
-        
         [_toner generateTone];
     }
     

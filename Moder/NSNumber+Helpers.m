@@ -12,16 +12,16 @@
 
 - (BOOL) isWithinPercentage:(NSNumber *)percent ofNumber:(NSNumber *)number
 {
-    int deviation = ([self intValue] * [percent intValue]) / 100;
-    int minLength = [self intValue] - deviation;
-    int maxLength = [self intValue] + deviation;
+    int deviation = ([number intValue] * [percent intValue]) / 100;
+    int minLength = [number intValue] - deviation;
+    int maxLength = [number intValue] + deviation;
     
-    if ([number intValue] > minLength && [number intValue] < maxLength)
+    if ([self intValue] > minLength && [self intValue] < maxLength)
     {
         return YES;
     }
     else
-    {
+    {   
         return NO;
     }
 }
