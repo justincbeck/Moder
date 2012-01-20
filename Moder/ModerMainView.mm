@@ -29,7 +29,6 @@
         [self addSubview:_currentLetterLabel];
         
         _currentTextTextView = [[UITextView alloc] initWithFrame:CGRectMake(0.0f, 380.0f, 320.0f, 100.0f)];
-        _currentTextTextView.backgroundColor = [UIColor grayColor];
         [self addSubview:_currentTextTextView];
         
         _touchView = [[TouchableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 480.0f)];

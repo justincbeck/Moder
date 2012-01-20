@@ -15,9 +15,9 @@
 
 #define kModerDefaultPercentageDeviation 50
 
-#define kModerDefaultUnitLength 200
-#define kModerDefaultLetterSeperator 600
-#define kModerDefaultWordSeperator 1400
+#define kModerDefaultUnitLength 150
+#define kModerDefaultLetterSeperator 450
+#define kModerDefaultWordSeperator 1050
 
 @implementation Coder
 
@@ -59,17 +59,22 @@ double touchEndTime;
     if (touchEndTime > 0.0f)
     {
         int pauseLengthInMillis = [self timeInMillis:notTouchLength];
-
-        if (pauseLengthInMillis > kModerDefaultLetterSeperator)
+        
+        if (pauseLengthInMillis > kModerDefaultWordSeperator)
         {
-            [_currentWord addObject:_currentLetter];
+            NSLog(@"Adding word to text");
+            [_text addObject:_currentWord];
             [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
+            [self.delegate startNewWord:[self decodeLetter:_currentLetter]];
             [_currentLetter removeAllObjects];
         }
-        else
+        else if (pauseLengthInMillis > kModerDefaultLetterSeperator)
         {
-            Signal *pause = [[Signal alloc] initWithPauseLength:pauseLengthInMillis];
-            [_currentLetter addObject:pause];
+            NSLog(@"Adding letter to word");
+            [_currentWord addObject:_currentLetter];
+            [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
+            [self.delegate appendToCurrentWord:[self decodeLetter:_currentLetter]];
+            [_currentLetter removeAllObjects];
         }
     }
 }
@@ -77,13 +82,9 @@ double touchEndTime;
 - (NSString *) decodeLetter:(NSArray *)letter
 {
     CodeDecoder *decoder = [[CodeDecoder alloc] init];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tone = YES"];
-    NSArray *tones = [_currentLetter filteredArrayUsingPredicate:predicate];
-    
     NSString *decoded = [NSString string];
     
-    for (Signal *signal in tones)
+    for (Signal *signal in _currentLetter)
     {
         NSNumber *signalLength = [NSNumber numberWithInt:signal.length];
         

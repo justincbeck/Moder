@@ -13,6 +13,8 @@
 @required
 
 - (void)displayLetter:(NSString *)letter;
+- (void)startNewWord:(NSString *)letter;
+- (void)appendToCurrentWord:(NSString *)letter;
 
 @end
 
