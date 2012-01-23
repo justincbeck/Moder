@@ -30,11 +30,12 @@
         _currentLetterLabel.lineBreakMode = UILineBreakModeWordWrap;
         [self addSubview:_currentLetterLabel];
         
-        _debugView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 40.0f)];
+        _debugView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 60.0f)];
         _debugView.backgroundColor = [UIColor clearColor];
+        _debugView.textColor = [UIColor redColor];
         _debugView.font = [UIFont fontWithName:@"Arial" size:12.0f];
         _debugView.adjustsFontSizeToFitWidth = YES;
-        _debugView.textAlignment = UITextAlignmentCenter;
+        _debugView.textAlignment = UITextAlignmentLeft;
         _debugView.numberOfLines = 0;
         _debugView.lineBreakMode = UILineBreakModeWordWrap;
         [self addSubview:_debugView];

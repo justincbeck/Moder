@@ -11,6 +11,9 @@
 #import "NSNumber+Helpers.h"
 
 int unitLength;
+int letterSeparator;
+int wordSeparator;
+int percentDeviation;
 
 @implementation ModerMainViewController
 
@@ -21,8 +24,19 @@ int unitLength;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _mainView = [[ModerMainView alloc] init];
-        _mainView.debugView.text = [NSString stringWithFormat:@"Unit Length: %i", unitLength];
         unitLength = kModerDefaultUnitLength;
+        letterSeparator = kModerDefaultLetterSeperator;
+        wordSeparator = kModerDefaultWordSeperator;
+        percentDeviation = kModerDefaultPercentageDeviation;
+
+        NSString *debugString = [NSString stringWithFormat:@"Unit Length: %ims\nLetter Separator: %ims\nWord Separator: %ims\nPercent Deviation: %i%%",
+                                 unitLength,
+                                 letterSeparator,
+                                 wordSeparator,
+                                 percentDeviation];
+        _mainView.debugView.text = debugString;
+        
+        _signalLengths = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -77,15 +91,41 @@ int unitLength;
 - (void)recalculateUnitLengthWithNewSignalLength:(NSNumber *)signalLength
 {
     [_signalLengths addObject:signalLength];
-    _mainView.debugView.text = [NSString stringWithFormat:@"Unit Length: %i", unitLength];
+    
+    int total = 0;
     
     for (NSNumber *length in _signalLengths)
     {
         if ([length isWithinPercentage:[NSNumber numberWithInt:50] ofNumber:[NSNumber numberWithInt:unitLength]])
         {
-            // Do something with that number
+            total += [length intValue];
+        }
+        else
+        {
+            total += [length intValue] / 3;
         }
     }
+    
+    if (_signalLengths.count > 0)
+    {
+        unitLength = total / _signalLengths.count;
+        letterSeparator = unitLength * 3;
+        wordSeparator = unitLength * 7;
+    }
+    
+    NSString *debugString = [NSString stringWithFormat:@"Unit Length: %ims\nLetter Separator: %ims\nWord Separator: %ims\nPercent Deviation: %i%%",
+                             unitLength,
+                             letterSeparator,
+                             wordSeparator,
+                             percentDeviation];
+    
+    _mainView.debugView.text = debugString;
+    
+    NSLog(@"Unit Length: %i", unitLength);
+    NSLog(@"Letter Seperator: %i", letterSeparator);
+    NSLog(@"Word Seperator: %i", wordSeparator);
+    NSLog(@"Percent Deviation: %i", percentDeviation);
+    NSLog(@"*******************************");
 }
 
 #pragma mark - View lifecycle

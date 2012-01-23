@@ -14,6 +14,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 extern int unitLength;
+extern int letterSeparator;
+extern int wordSeparator;
+extern int percentDeviation;
 
 @implementation Coder
 
@@ -40,9 +43,9 @@ double touchEndTime;
 {
     touchEndTime = CACurrentMediaTime();
     signalLength = touchEndTime - touchStartTime;
-    [self.delegate recalculateUnitLengthWithNewSignalLength:[NSNumber numberWithInt:signalLength]];
-    
     int signalLengthInMillis = [self timeInMillis:signalLength];
+
+    [self.delegate recalculateUnitLengthWithNewSignalLength:[NSNumber numberWithInt:signalLengthInMillis]];
     
     Signal *signal = [[Signal alloc] initWithSignalLength:signalLengthInMillis];
     [_currentLetter addObject:signal];
@@ -57,17 +60,15 @@ double touchEndTime;
     {
         int pauseLengthInMillis = [self timeInMillis:notTouchLength];
         
-        if (pauseLengthInMillis > kModerDefaultWordSeperator)
+        if (pauseLengthInMillis > wordSeparator)
         {
-            NSLog(@"Adding word to text");
             [_text addObject:_currentWord];
             [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
             [self.delegate startNewWord:[self decodeLetter:_currentLetter]];
             [_currentLetter removeAllObjects];
         }
-        else if (pauseLengthInMillis > kModerDefaultLetterSeperator)
+        else if (pauseLengthInMillis > letterSeparator)
         {
-            NSLog(@"Adding letter to word");
             [_currentWord addObject:_currentLetter];
             [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
             [self.delegate appendToCurrentWord:[self decodeLetter:_currentLetter]];
@@ -85,7 +86,7 @@ double touchEndTime;
     {
         NSNumber *signalLength = [NSNumber numberWithInt:signal.length];
         
-        if ([signalLength isWithinPercentage:[NSNumber numberWithInt:kModerDefaultPercentageDeviation] ofNumber:[NSNumber numberWithInt:unitLength]])
+        if ([signalLength isWithinPercentage:[NSNumber numberWithInt:percentDeviation] ofNumber:[NSNumber numberWithInt:unitLength]])
         {
             decoded = [decoded stringByAppendingString:@"."];
         }
@@ -95,10 +96,7 @@ double touchEndTime;
         }
     }
     
-    NSLog(@"%@", decoded);
-    
     NSString *decodedString = [decoder.map objectForKey:decoded];
-
     return decodedString ?: @"";
 }
 

@@ -15,6 +15,6 @@
 
 #define kModerDefaultPercentageDeviation 50
 
-#define kModerDefaultUnitLength 200
-#define kModerDefaultLetterSeperator 600
-#define kModerDefaultWordSeperator 1400
+#define kModerDefaultUnitLength 150
+#define kModerDefaultLetterSeperator 450
+#define kModerDefaultWordSeperator 1050

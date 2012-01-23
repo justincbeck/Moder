@@ -24,11 +24,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-//    NSLog(@"Default Unit Length: %i", kModerDefaultUnitLength);
-//    NSLog(@"Default Letter Seperator: %i", kModerDefaultLetterSeperator);
-//    NSLog(@"Default Word Seperator: %i", kModerDefaultWordSeperator);
-//    NSLog(@"Default Percent Deviation: %i", kModerDefaultPercentageDeviation);
-    
     return YES;
 }
 
