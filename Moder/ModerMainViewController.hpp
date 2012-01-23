@@ -13,6 +13,7 @@
 @interface ModerMainViewController : UIViewController <ModerCoderDelegate>
 {
     ModerMainView *_mainView;
+    NSMutableArray *_signalLengths;
 }
 
 @property (nonatomic, retain) ModerMainView *mainView;

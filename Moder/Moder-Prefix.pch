@@ -12,3 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define kModerDefaultPercentageDeviation 50
+
+#define kModerDefaultUnitLength 200
+#define kModerDefaultLetterSeperator 600
+#define kModerDefaultWordSeperator 1400

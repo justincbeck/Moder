@@ -11,10 +11,14 @@
 
 @interface ModerMainView : UIView
 {
+    UILabel *_debugView;
+    
     UILabel *_currentLetterLabel;
     UITextView *_currentTextTextView;
     TouchableView *_touchView;
 }
+
+@property (nonatomic, retain) UILabel *debugView;
 
 @property (nonatomic, retain) UILabel *currentLetterLabel;
 @property (nonatomic, retain) UITextView *currentTextTextView;

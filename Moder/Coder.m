@@ -13,11 +13,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#define kModerDefaultPercentageDeviation 50
-
-#define kModerDefaultUnitLength 150
-#define kModerDefaultLetterSeperator 450
-#define kModerDefaultWordSeperator 1050
+extern int unitLength;
 
 @implementation Coder
 
@@ -44,6 +40,7 @@ double touchEndTime;
 {
     touchEndTime = CACurrentMediaTime();
     signalLength = touchEndTime - touchStartTime;
+    [self.delegate recalculateUnitLengthWithNewSignalLength:[NSNumber numberWithInt:signalLength]];
     
     int signalLengthInMillis = [self timeInMillis:signalLength];
     
@@ -88,7 +85,7 @@ double touchEndTime;
     {
         NSNumber *signalLength = [NSNumber numberWithInt:signal.length];
         
-        if ([signalLength isWithinPercentage:[NSNumber numberWithInt:kModerDefaultPercentageDeviation] ofNumber:[NSNumber numberWithInt:kModerDefaultUnitLength]])
+        if ([signalLength isWithinPercentage:[NSNumber numberWithInt:kModerDefaultPercentageDeviation] ofNumber:[NSNumber numberWithInt:unitLength]])
         {
             decoded = [decoded stringByAppendingString:@"."];
         }
@@ -100,7 +97,9 @@ double touchEndTime;
     
     NSLog(@"%@", decoded);
     
-    return [decoder.map objectForKey:decoded];
+    NSString *decodedString = [decoder.map objectForKey:decoded];
+
+    return decodedString ?: @"";
 }
 
 - (int) timeInMillis:(double) time

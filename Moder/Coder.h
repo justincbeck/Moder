@@ -15,6 +15,7 @@
 - (void)displayLetter:(NSString *)letter;
 - (void)startNewWord:(NSString *)letter;
 - (void)appendToCurrentWord:(NSString *)letter;
+- (void)recalculateUnitLengthWithNewSignalLength:(NSNumber *)signalLength;
 
 @end
 

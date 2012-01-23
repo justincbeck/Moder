@@ -8,6 +8,9 @@
 
 #import "ModerMainViewController.hpp"
 #import "ModerMainView.hpp"
+#import "NSNumber+Helpers.h"
+
+int unitLength;
 
 @implementation ModerMainViewController
 
@@ -18,6 +21,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _mainView = [[ModerMainView alloc] init];
+        _mainView.debugView.text = [NSString stringWithFormat:@"Unit Length: %i", unitLength];
+        unitLength = kModerDefaultUnitLength;
     }
     return self;
 }
@@ -46,7 +51,6 @@
             }];
         }];
     }];
-
 }
 
 - (void)startNewWord:(NSString *)letter {
@@ -68,6 +72,20 @@
     NSMutableString *currentText = [NSMutableString stringWithString:_mainView.currentTextTextView.text];
     [currentText appendString:letter];
     _mainView.currentTextTextView.text = currentText;
+}
+
+- (void)recalculateUnitLengthWithNewSignalLength:(NSNumber *)signalLength
+{
+    [_signalLengths addObject:signalLength];
+    _mainView.debugView.text = [NSString stringWithFormat:@"Unit Length: %i", unitLength];
+    
+    for (NSNumber *length in _signalLengths)
+    {
+        if ([length isWithinPercentage:[NSNumber numberWithInt:50] ofNumber:[NSNumber numberWithInt:unitLength]])
+        {
+            // Do something with that number
+        }
+    }
 }
 
 #pragma mark - View lifecycle
