@@ -145,6 +145,17 @@ int percentDeviation;
     [self.navigationController pushViewController:settingsViewController animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSString *debugString = [NSString stringWithFormat:@"Unit Length: %ims\nLetter Separator: %ims\nWord Separator: %ims\nPercent Deviation: %i%%",
+                             unitLength,
+                             letterSeparator,
+                             wordSeparator,
+                             percentDeviation];
+    
+    _mainView.debugView.text = debugString;
+}
+
 # pragma mark other standard methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

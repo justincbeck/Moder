@@ -7,6 +7,9 @@
 //
 
 #import "SettingsViewController.h"
+#import "SettingsView.h"
+
+extern int percentDeviation;
 
 @implementation SettingsViewController
 
@@ -14,14 +17,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed)];
-        self.navigationItem.leftBarButtonItem = backButton;
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed)];
+        self.navigationItem.leftBarButtonItem = doneButton;
     }
     return self;
 }
 
-- (void)backButtonPressed
+- (void)doneButtonPressed
 {
+    percentDeviation = _settingsView.deviationSlider.value;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -34,7 +38,11 @@
 
 - (void)loadView
 {
-    
+    _settingsView = [[SettingsView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 414.0f)];
+    _settingsView.deviationSlider.minimumValue = 20;
+    _settingsView.deviationSlider.maximumValue = 80;
+    _settingsView.deviationSlider.value = percentDeviation;
+    self.view = _settingsView;
 }
 
 - (void)viewDidUnload

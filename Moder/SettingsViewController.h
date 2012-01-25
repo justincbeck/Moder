@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SettingsView.h"
+
 @interface SettingsViewController : UIViewController
+{
+    SettingsView *_settingsView;
+}
 
 @end

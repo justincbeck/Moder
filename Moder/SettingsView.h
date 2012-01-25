@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsView : UIView
+{
+    UILabel *_sliderLabel;
+    UISlider *_deviationSlider;
+}
+
+@property (nonatomic, retain) UILabel *sliderLabel;
+@property (nonatomic, retain) UISlider *deviationSlider;
 
 @end
