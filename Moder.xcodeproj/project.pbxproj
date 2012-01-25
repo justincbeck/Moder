@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		981925A014C62B8F009AAB86 /* NSNumber+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */; };
+		983B1C8814CF302900D77D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B1C8714CF302900D77D3C /* SettingsViewController.m */; };
+		983B1C8B14CF303D00D77D3C /* SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B1C8A14CF303D00D77D3C /* SettingsView.m */; };
 		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
 		9845CBE514C36AB3006DEB8B /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE414C36AB3006DEB8B /* Coder.m */; };
 		9845CBE914C36D0B006DEB8B /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9845CBE814C36D0B006DEB8B /* Signal.m */; };
@@ -29,6 +31,10 @@
 /* Begin PBXFileReference section */
 		9819259E14C62B8F009AAB86 /* NSNumber+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Helpers.h"; sourceTree = "<group>"; };
 		9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Helpers.m"; sourceTree = "<group>"; };
+		983B1C8614CF302900D77D3C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		983B1C8714CF302900D77D3C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		983B1C8914CF303D00D77D3C /* SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsView.h; sourceTree = "<group>"; };
+		983B1C8A14CF303D00D77D3C /* SettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsView.m; sourceTree = "<group>"; };
 		9845CBDF14C36316006DEB8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9845CBE314C36AB3006DEB8B /* Coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coder.h; sourceTree = "<group>"; };
 		9845CBE414C36AB3006DEB8B /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
@@ -73,6 +79,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		983B1C8314CF2FF000D77D3C /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				983B1C8514CF300D00D77D3C /* SettingsView */,
+				983B1C8614CF302900D77D3C /* SettingsViewController.h */,
+				983B1C8714CF302900D77D3C /* SettingsViewController.m */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		983B1C8514CF300D00D77D3C /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				983B1C8914CF303D00D77D3C /* SettingsView.h */,
+				983B1C8A14CF303D00D77D3C /* SettingsView.m */,
+			);
+			name = SettingsView;
+			sourceTree = "<group>";
+		};
 		9845CBE214C36A99006DEB8B /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +187,7 @@
 		98C7ED9914BE75D400B7A779 /* Moder */ = {
 			isa = PBXGroup;
 			children = (
+				983B1C8314CF2FF000D77D3C /* SettingsViewController */,
 				9845CBE214C36A99006DEB8B /* Code */,
 				98EB51F314BFD60700F7A1A6 /* Audio */,
 				98EB51EB14BFC84700F7A1A6 /* Resources */,
@@ -283,6 +309,8 @@
 				9845CBE914C36D0B006DEB8B /* Signal.m in Sources */,
 				981925A014C62B8F009AAB86 /* NSNumber+Helpers.m in Sources */,
 				9875AB5D14C86FFE00D71CA2 /* CodeDecoder.m in Sources */,
+				983B1C8814CF302900D77D3C /* SettingsViewController.m in Sources */,
+				983B1C8B14CF303D00D77D3C /* SettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

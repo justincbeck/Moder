@@ -7,6 +7,7 @@
 //
 
 #import "ModerMainViewController.hpp"
+#import "SettingsViewController.h"
 #import "ModerMainView.hpp"
 #import "NSNumber+Helpers.h"
 
@@ -23,28 +24,36 @@ int percentDeviation;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _mainView = [[ModerMainView alloc] init];
+        UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonPressed)];
+        self.navigationItem.rightBarButtonItem = settingsButton;
+
+        _signalLengths = [[NSMutableArray alloc] init];
+
         unitLength = kModerDefaultUnitLength;
         letterSeparator = kModerDefaultLetterSeperator;
         wordSeparator = kModerDefaultWordSeperator;
         percentDeviation = kModerDefaultPercentageDeviation;
-
-        NSString *debugString = [NSString stringWithFormat:@"Unit Length: %ims\nLetter Separator: %ims\nWord Separator: %ims\nPercent Deviation: %i%%",
-                                 unitLength,
-                                 letterSeparator,
-                                 wordSeparator,
-                                 percentDeviation];
-        _mainView.debugView.text = debugString;
-        
-        _signalLengths = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - View lifecycle
+
+- (void)loadView
 {
-    [super didReceiveMemoryWarning];
+    _mainView = [[ModerMainView alloc] init];
+    NSString *debugString = [NSString stringWithFormat:@"Unit Length: %ims\nLetter Separator: %ims\nWord Separator: %ims\nPercent Deviation: %i%%",
+                             unitLength,
+                             letterSeparator,
+                             wordSeparator,
+                             percentDeviation];
+    _mainView.debugView.text = debugString;
+    _mainView.touchView.coder.delegate = self;
+    
+    [self setView:_mainView];
 }
+
+# pragma mark ModerCoderDelegate methods
 
 - (void)displayLetter:(NSString *)letter
 {
@@ -128,17 +137,25 @@ int percentDeviation;
     NSLog(@"*******************************");
 }
 
-#pragma mark - View lifecycle
+# pragma mark Non-lifecycle methods
 
-- (void)loadView
+- (void)settingsButtonPressed
 {
-    _mainView.touchView.coder.delegate = self;
-    [self setView:_mainView];
+    SettingsViewController *settingsViewController = [[SettingsViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:settingsViewController animated:YES];
 }
+
+# pragma mark other standard methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 
 @end

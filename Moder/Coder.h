@@ -33,7 +33,7 @@
 @property (nonatomic, retain) id <ModerCoderDelegate> delegate;
 
 - (void) addSignal;
-- (void) addPause;
+- (void) pause;
 
 - (int) timeInMillis:(double)time;
 - (NSString *)decodeLetter:(NSArray *)letter;

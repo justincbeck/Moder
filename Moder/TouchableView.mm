@@ -35,7 +35,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_toner startPlaying];
-    [_coder addPause];
+    [_coder pause];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

@@ -22,7 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
 
-        _currentLetterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 380.0f)];
+        _currentLetterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 336.0f)];
         _currentLetterLabel.font = [UIFont fontWithName:@"Arial" size:300.0f];
         _currentLetterLabel.adjustsFontSizeToFitWidth = YES;
         _currentLetterLabel.textAlignment = UITextAlignmentCenter;

@@ -51,7 +51,7 @@ double touchEndTime;
     [_currentLetter addObject:signal];
 }
 
-- (void) addPause
+- (void) pause
 {
     touchStartTime = CACurrentMediaTime();
     notTouchLength = touchStartTime - touchEndTime;
