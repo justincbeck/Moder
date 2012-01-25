@@ -39,9 +39,9 @@ extern int percentDeviation;
 - (void)loadView
 {
     _settingsView = [[SettingsView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 414.0f)];
-    _settingsView.deviationSlider.minimumValue = 20;
-    _settingsView.deviationSlider.maximumValue = 80;
     _settingsView.deviationSlider.value = percentDeviation;
+    _settingsView.sliderValueLabel.text = [NSString stringWithFormat:@"%i", percentDeviation];
+
     self.view = _settingsView;
 }
 

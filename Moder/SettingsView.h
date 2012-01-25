@@ -12,9 +12,11 @@
 {
     UILabel *_sliderLabel;
     UISlider *_deviationSlider;
+    UILabel *_sliderValueLabel;
 }
 
 @property (nonatomic, retain) UILabel *sliderLabel;
 @property (nonatomic, retain) UISlider *deviationSlider;
+@property (nonatomic, retain) UILabel *sliderValueLabel;
 
 @end

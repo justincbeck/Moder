@@ -12,6 +12,7 @@
 
 @synthesize sliderLabel = _sliderLabel;
 @synthesize deviationSlider = _deviationSlider;
+@synthesize sliderValueLabel = _sliderValueLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,10 +24,23 @@
         _sliderLabel.text = @"Percent Deviation:";
         [self addSubview:_sliderLabel];
         
-        _deviationSlider = [[UISlider alloc] initWithFrame:CGRectMake(130.0f, 0.0f, 180.0f, 40.0f)];
+        _deviationSlider = [[UISlider alloc] initWithFrame:CGRectMake(130.0f, 0.0f, 140.0f, 40.0f)];
+        _deviationSlider.minimumValue = 20;
+        _deviationSlider.maximumValue = 80;
+        [_deviationSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
         [self addSubview:_deviationSlider];
+        
+        _sliderValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(290.0f, 0.0f, 40.0f, 40.0f)];
+        _sliderValueLabel.font = [UIFont fontWithName:@"Arial" size:12.0f];
+        _sliderValueLabel.textColor = [UIColor blackColor];
+        [self addSubview:_sliderValueLabel];
     }
     return self;
+}
+
+- (void)sliderValueChanged:(id)sender
+{
+    _sliderValueLabel.text = [NSString stringWithFormat:@"%g", _deviationSlider.value];
 }
 
 @end
