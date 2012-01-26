@@ -40,7 +40,7 @@
 
 - (void)sliderValueChanged:(id)sender
 {
-    _sliderValueLabel.text = [NSString stringWithFormat:@"%g", _deviationSlider.value];
+    _sliderValueLabel.text = [NSString stringWithFormat:@"%i", [[NSNumber numberWithFloat:_deviationSlider.value] intValue]];
 }
 
 @end
