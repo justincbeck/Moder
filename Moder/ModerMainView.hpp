@@ -1,5 +1,5 @@
 //
-//  ModerPracticeView.h
+//  ModerMainView.h
 //  Moder
 //
 //  Created by Justin Beck on 1/12/12.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TouchableView.hpp"
 
-@interface ModerPracticeView : UIView
+@interface ModerMainView : UIView
 {
     UILabel *_debugView;
     

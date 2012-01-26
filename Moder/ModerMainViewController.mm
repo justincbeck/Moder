@@ -1,14 +1,14 @@
 //
-//  ModerPracticeViewController.m
+//  ModerMainViewController.m
 //  Moder
 //
 //  Created by Justin Beck on 1/12/12.
 //  Copyright (c) 2012 Beckproduct. All rights reserved.
 //
 
-#import "ModerPracticeViewController.hpp"
+#import "ModerMainViewController.hpp"
 #import "SettingsViewController.h"
-#import "ModerPracticeView.hpp"
+#import "ModerMainView.hpp"
 #import "NSNumber+Helpers.h"
 
 int unitLength;
@@ -16,7 +16,7 @@ int letterSeparator;
 int wordSeparator;
 int percentDeviation;
 
-@implementation ModerPracticeViewController
+@implementation ModerMainViewController
 
 @synthesize mainView = _mainView;
 
@@ -41,7 +41,7 @@ int percentDeviation;
 
 - (void)loadView
 {
-    _mainView = [[ModerPracticeView alloc] init];
+    _mainView = [[ModerMainView alloc] init];
     NSString *debugString = [NSString stringWithFormat:@"Unit Length: %ims\nLetter Separator: %ims\nWord Separator: %ims\nPercent Deviation: %i%%",
                              unitLength,
                              letterSeparator,
