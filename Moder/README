@@ -1,0 +1,7 @@
+What if it could also decode an audio stream?
+- Could this be done through the microphone?
+- Could this be done from an MP3 (or some other format) file?
+
+What if it could also convert text into a morse code audio stream (for a ring tone)?
+- Unfortunately you can't gain access to the ringtone system programatically.
+- You could still create the ringtone and then add it to your phone manually though.

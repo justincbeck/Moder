@@ -8,7 +8,7 @@
 
 #import "AppDelegate.hpp"
 
-#import "ModerMainViewController.hpp"
+#import "ModerPracticeViewController.hpp"
 
 @implementation AppDelegate
 
@@ -17,9 +17,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    ModerMainViewController *mainViewController = [[ModerMainViewController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+
+    ModerPracticeViewController *practiceViewController = [[ModerPracticeViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:practiceViewController];
     
     self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];

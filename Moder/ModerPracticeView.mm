@@ -1,15 +1,15 @@
 //
-//  ModerMainView.m
+//  ModerPracticeView.m
 //  Moder
 //
 //  Created by Justin Beck on 1/12/12.
 //  Copyright (c) 2012 Beckproduct. All rights reserved.
 //
 
-#import "ModerMainView.hpp"
+#import "ModerPracticeView.hpp"
 #import "TouchableView.hpp"
 
-@implementation ModerMainView
+@implementation ModerPracticeView
 
 @synthesize debugView = _debugView;
 
