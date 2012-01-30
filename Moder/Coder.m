@@ -63,15 +63,27 @@ double touchEndTime;
         if (pauseLengthInMillis > wordSeparator)
         {
             [_text addObject:_currentWord];
-            [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
-            [self.delegate startNewWord:[self decodeLetter:_currentLetter]];
+            
+            NSString *letter = [self decodeLetter:_currentLetter];
+            if (letter)
+            {
+                [self.delegate displayLetter:letter];
+                [self.delegate startNewWord:letter];
+            }
+
             [_currentLetter removeAllObjects];
         }
         else if (pauseLengthInMillis > letterSeparator)
         {
             [_currentWord addObject:_currentLetter];
-            [self.delegate displayLetter:[self decodeLetter:_currentLetter]];
-            [self.delegate appendToCurrentWord:[self decodeLetter:_currentLetter]];
+            
+            NSString *letter = [self decodeLetter:_currentLetter];
+            if (letter)
+            {
+                [self.delegate displayLetter:letter];
+                [self.delegate appendToCurrentWord:letter];
+            }
+
             [_currentLetter removeAllObjects];
         }
     }
