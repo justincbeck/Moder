@@ -29,6 +29,7 @@ int percentDeviation;
 
         _signalLengths = [[NSMutableArray alloc] init];
 
+        self.title = @"(M)ode";
         unitLength = kModerDefaultUnitLength;
         letterSeparator = kModerDefaultLetterSeperator;
         wordSeparator = kModerDefaultWordSeperator;

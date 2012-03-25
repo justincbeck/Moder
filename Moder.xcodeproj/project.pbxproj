@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		981925A014C62B8F009AAB86 /* NSNumber+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */; };
+		98256377151F5C81003704B2 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98256376151F5C81003704B2 /* GameViewController.m */; };
+		9825637A151F5C95003704B2 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98256379151F5C95003704B2 /* GameView.m */; };
 		983B1C8814CF302900D77D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B1C8714CF302900D77D3C /* SettingsViewController.m */; };
 		983B1C8B14CF303D00D77D3C /* SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B1C8A14CF303D00D77D3C /* SettingsView.m */; };
 		9845CBE014C36316006DEB8B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9845CBDF14C36316006DEB8B /* QuartzCore.framework */; };
@@ -31,6 +33,10 @@
 /* Begin PBXFileReference section */
 		9819259E14C62B8F009AAB86 /* NSNumber+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Helpers.h"; sourceTree = "<group>"; };
 		9819259F14C62B8F009AAB86 /* NSNumber+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Helpers.m"; sourceTree = "<group>"; };
+		98256375151F5C81003704B2 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		98256376151F5C81003704B2 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		98256378151F5C95003704B2 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		98256379151F5C95003704B2 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		983B1C8614CF302900D77D3C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		983B1C8714CF302900D77D3C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		983B1C8914CF303D00D77D3C /* SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsView.h; sourceTree = "<group>"; };
@@ -79,6 +85,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98256373151F5C4F003704B2 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				98256374151F5C5C003704B2 /* GameView */,
+				98256375151F5C81003704B2 /* GameViewController.h */,
+				98256376151F5C81003704B2 /* GameViewController.m */,
+			);
+			name = GameViewController;
+			sourceTree = "<group>";
+		};
+		98256374151F5C5C003704B2 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				98256378151F5C95003704B2 /* GameView.h */,
+				98256379151F5C95003704B2 /* GameView.m */,
+			);
+			name = GameView;
+			sourceTree = "<group>";
+		};
 		983B1C8314CF2FF000D77D3C /* SettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +212,7 @@
 		98C7ED9914BE75D400B7A779 /* Moder */ = {
 			isa = PBXGroup;
 			children = (
+				98256373151F5C4F003704B2 /* GameViewController */,
 				983B1C8314CF2FF000D77D3C /* SettingsViewController */,
 				9845CBE214C36A99006DEB8B /* Code */,
 				98EB51F314BFD60700F7A1A6 /* Audio */,
@@ -263,7 +289,7 @@
 		98C7ED8614BE75D400B7A779 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 98C7ED8914BE75D400B7A779 /* Build configuration list for PBXProject "Moder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -311,6 +337,8 @@
 				9875AB5D14C86FFE00D71CA2 /* CodeDecoder.m in Sources */,
 				983B1C8814CF302900D77D3C /* SettingsViewController.m in Sources */,
 				983B1C8B14CF303D00D77D3C /* SettingsView.m in Sources */,
+				98256377151F5C81003704B2 /* GameViewController.m in Sources */,
+				9825637A151F5C95003704B2 /* GameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

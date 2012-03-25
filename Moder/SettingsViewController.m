@@ -19,6 +19,7 @@ extern int percentDeviation;
     if (self) {
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(doneButtonPressed)];
         self.navigationItem.leftBarButtonItem = doneButton;
+        self.title = @"Settings";
     }
     return self;
 }

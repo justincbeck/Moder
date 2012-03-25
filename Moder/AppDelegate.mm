@@ -9,6 +9,8 @@
 #import "AppDelegate.hpp"
 
 #import "ModerMainViewController.hpp"
+#import "GameViewController.h"
+#import "SettingsViewController.h"
 
 @implementation AppDelegate
 
@@ -19,9 +21,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ModerMainViewController *mainViewController = [[ModerMainViewController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    GameViewController *gameViewController = [[GameViewController alloc] initWithNibName:nil bundle:nil];
+    SettingsViewController *settingsViewController = [[SettingsViewController alloc] initWithNibName:nil bundle:nil];
     
-    self.window.rootViewController = navController;
+    UITabBarController *tabBarController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:mainViewController, gameViewController, settingsViewController, nil]];
+    
+    self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
