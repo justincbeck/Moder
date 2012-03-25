@@ -1,4 +1,16 @@
 What if it could also decode an audio stream?
 What if it could also convert text into a morse code audio stream (for a ring tone)?
 
-Adding some more stuff
+Adding a game:
+
+The game consists of a letter appearing on screen and a user trying to tap
+out the letter in morese code.  Getting the letter right gets some points.
+
+There will be some number of tries before the letter is revealed in Morse
+code.
+
+Levels increasing will present letters in pairs, sets of three, of four and
+then whole words.
+
+Also, the levels could present the letters/words for shorter
+times or allow less tries before counting the 'guess' as wrong.
