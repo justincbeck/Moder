@@ -11,6 +11,9 @@
 #import "GameView.h"
 
 @interface GameViewController ()
+{
+    NSArray *_letters;
+}
 
 @end
 
@@ -20,6 +23,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        _letters = [NSArray arrayWithObjects:@"a", @"b", "c", "d",
+                    "e", "f", "g", "h", "i", "j", "k",
+                    "l", "m", "n", "o", "p", "q", "r",
+                    "s", "t", "u", "v", "w", "x", "y", "z", nil];
+        
         self.title = @"Game";
     }
     return self;
