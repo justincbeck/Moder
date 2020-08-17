@@ -21,11 +21,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ModerMainViewController *mainViewController = [[ModerMainViewController alloc] initWithNibName:nil bundle:nil];
-    GameViewController *gameViewController = [[GameViewController alloc] initWithNibName:nil bundle:nil];
+//    GameViewController *gameViewController = [[GameViewController alloc] initWithNibName:nil bundle:nil];
     SettingsViewController *settingsViewController = [[SettingsViewController alloc] initWithNibName:nil bundle:nil];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
-    [tabBarController setViewControllers:[NSArray arrayWithObjects:mainViewController, gameViewController, settingsViewController, nil]];
+//    [tabBarController setViewControllers:[NSArray arrayWithObjects:mainViewController, gameViewController, settingsViewController, nil]];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:mainViewController, settingsViewController, nil]];
     
     self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
